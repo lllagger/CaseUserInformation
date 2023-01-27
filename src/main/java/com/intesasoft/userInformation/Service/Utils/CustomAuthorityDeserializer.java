@@ -18,16 +18,6 @@ public class CustomAuthorityDeserializer extends JsonDeserializer {
 
     @Override
     public Object deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JacksonException {
-   //     ObjectMapper mapper = (ObjectMapper) jsonParser.getCodec();
-   //     JsonNode jsonNode = mapper.readTree(jsonParser);
-   //     List<GrantedAuthority> grantedAuthorities = new LinkedList<>();
-   //     Iterator<JsonNode> elements = jsonNode.elements();
-   //     while (elements.hasNext()) {
-   //         JsonNode next = elements.next();
-   //         JsonNode authority = next.get("authorities");
-   //         grantedAuthorities.add(new SimpleGrantedAuthority(authority.asText()));
-   //     }
-   //     return grantedAuthorities;
         return new ArrayList<>();
     }
 
