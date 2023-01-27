@@ -2,8 +2,8 @@ package com.intesasoft.userInformation.Entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.intesasoft.userInformation.Service.Utils.CustomAuthorityDeserializer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,32 +14,32 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MaxUserDetails implements UserDetails {
+
     private String userEmail;
     private String userPassword;
-    private List<GrantedAuthority> authorities;
+    private List<GrantedAuthority> zauthorities;
 
     public MaxUserDetails(MaxUser maxUser) {
         this.userEmail = maxUser.getEmail();
         this.userPassword = maxUser.getPassword();
-        this.authorities = Arrays.stream(maxUser.getRole().split(","))
+        this.zauthorities = Arrays.stream(maxUser.getRole().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
+
     @JsonCreator
     public MaxUserDetails(
             @JsonProperty("userEmail") String userEmail,
-            @JsonProperty("userPassword") String userPassword,
-            @JsonProperty("authorities") List<GrantedAuthority> authorities) {
+            @JsonProperty("userPassword") String userPassword) {
         this.userEmail = userEmail;
         this.userPassword = userPassword;
-        this.authorities = authorities;
     }
 
     @Override
+    @JsonDeserialize(using = CustomAuthorityDeserializer.class)
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
+        return zauthorities;
     }
-
     @Override
     public String getPassword() {
         return userPassword;
