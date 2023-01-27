@@ -13,13 +13,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ApiModel(value = "MaxUser kullanıcı bulma modeli.", description = "Spring security ve DB ye veri atarken kullanılan sınıf.")
 public class MaxUserDetails implements UserDetails {
-    @ApiModelProperty(value = "MaxUserDetails e-mail alanı")
     private String userEmail;
-    @ApiModelProperty(value = "MaxUserDetails kullanıcı şifresi alanı")
     private String userPassword;
-    @ApiModelProperty(value = "MaxUserDetails rol alanı")
     private List<GrantedAuthority> authorities;
 
     public MaxUserDetails(MaxUser maxUser) {

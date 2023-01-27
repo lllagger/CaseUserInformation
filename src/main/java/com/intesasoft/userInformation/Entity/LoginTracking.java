@@ -16,18 +16,14 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "LOGINTRACKING")
 @Data
-@ApiModel(value = "Kullanıcı takip sınıfı", description = "Kullanıcı LOGIN ve LOGOUT sürelerinin tutulduğu entity.")
 public class LoginTracking {
     @Id
     @Column(name = "userid")
-    @ApiModelProperty(value = "Kullanıcı id sinin tutulduğu field.")
     private Integer id;
     @Column(name = "Attemptdate")
     @DateTimeFormat(pattern = "yyyy-dd-MM HH:mm:ss")
-    @ApiModelProperty(value = "Kullanıcı Giriş çıkış sürelerinin tutulduğu tarih alanı.")
     private LocalDateTime attemptDate;
     @Column(name = "attempttype")
-    @ApiModelProperty(value = "Kullanıcının giriş mi yoksa çıkışmı yaptığını gösteren alan.")
     private String attemptType;
 
     public LoginTracking() {

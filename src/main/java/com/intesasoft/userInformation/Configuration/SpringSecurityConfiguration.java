@@ -40,7 +40,14 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         try {
             http.headers().frameOptions().disable();
             http.csrf().disable().authorizeRequests()
-                    .antMatchers("/h2-console/**", "/api/register/user","/login").permitAll()
+                    .antMatchers("/h2-console/**", "/api/register/user","/login","/v2/api-docs",
+                            "/configuration/ui",
+                            "/swagger-resources/**",
+                            "/configuration/security",
+                            "/swagger-ui.html",
+                            "/swagger-ui/index.html",
+                            "/swagger-ui.html",
+                            "/webjars/**").permitAll()
                     .antMatchers("/api/list/users").hasRole("ADMIN")
                     .anyRequest().authenticated()
                     .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
@@ -48,17 +55,6 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         } catch (Exception e) {
             log.error("Check user roles.");
         }
-    }
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/v2/api-docs",
-                "/configuration/ui",
-                "/swagger-resources/**",
-                "/configuration/security",
-                "/swagger-ui.html",
-                "/swagger-ui/index.html",
-                "/swagger-ui.html",
-                "/webjars/**");
     }
     @Bean(name = BeanIds.AUTHENTICATION_MANAGER)
     @Override

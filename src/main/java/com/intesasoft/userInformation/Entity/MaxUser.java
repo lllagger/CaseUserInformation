@@ -16,28 +16,21 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "MAXUSER")
 @Data
-@ApiModel(value = "MaxUser nesnesi", description = "Kullanıcı bilgilerinin tutulduğu entity")
 public class MaxUser {
     @Id
     @Column(name = "userid")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(value = "MaxUser Id alanı")
     private int id;
     @Column(name = "name")
-    @ApiModelProperty(value = "MaxUser name alanı")
     private String name;
     @Column(name = "type")
-    @ApiModelProperty(value = "MaxUser type alanı")
     private String type;
     @Column(name = "password")
-    @ApiModelProperty(value = "MaxUser password alanı")
     private String password;
     @Column(name = "email", unique = true)
     @Email(message = "{Invalid email. Try again}")
-    @ApiModelProperty(value = "MaxUser e-mail alanı")
     private String email;
     @Column(name = "role")
-    @ApiModelProperty(value = "MaxUser role alanı")
     private String role;
     public MaxUser() {
     }
