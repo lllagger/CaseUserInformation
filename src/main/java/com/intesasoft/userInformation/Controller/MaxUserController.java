@@ -23,18 +23,21 @@ public class MaxUserController {
     private MaxUserService maxUserService;
 
     @GetMapping("/list/users")
+    @ApiOperation(value = "Bu metot ADMIN rolüne sahip kullanıcıların, kulanıcı listesini JSON tabanlı olarak getirir.")
     public List<MaxUser> findAll() {
         log.info("Users listed.");
         return maxUserService.listUsers();
     }
 
     @PostMapping(value = "/register/user")
+    @ApiOperation(value = "Bu metot veri tabanına kullanıcı kaydeder.")
     public String registerUser(@RequestBody MaxUser maxUser){
         log.info("User added to DB.");
         return maxUserService.addUser(maxUser);
     }
 
     @GetMapping("/token/owner")
+    @ApiOperation(value = "Bu metod'a verilen 'Bearer <token>' sahibinin bilgilerini getirir.")
     public String tokenUser(Principal principal){
         return "Token owner e-mail is: " + principal.getName();
     }

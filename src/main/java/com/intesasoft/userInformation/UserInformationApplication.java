@@ -2,15 +2,19 @@ package com.intesasoft.userInformation;
 
 import com.intesasoft.userInformation.Entity.LoginTracking;
 import com.intesasoft.userInformation.Entity.MaxUser;
-import com.intesasoft.userInformation.Repository.ILoginTrackingRepository;
 import com.intesasoft.userInformation.Service.LoginTrackingService;
 import com.intesasoft.userInformation.Service.MaxUserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import springfox.documentation.spring.web.plugins.DocumentationPluginsManager;
+import springfox.documentation.spring.web.scanners.ApiDescriptionReader;
+import springfox.documentation.spring.web.scanners.ApiListingScanner;
+import springfox.documentation.spring.web.scanners.ApiModelReader;
 
 import java.time.LocalDateTime;
 

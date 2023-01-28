@@ -1,4 +1,4 @@
-package com.intesasoft.userInformation.Service.Utils;
+package com.intesasoft.userInformation.Utils;
 
 import com.fasterxml.jackson.core.JacksonException;
 import com.fasterxml.jackson.core.JsonGenerator;

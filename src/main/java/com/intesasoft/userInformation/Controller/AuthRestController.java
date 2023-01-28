@@ -32,6 +32,7 @@ public class AuthRestController {
     private UserDetailsService userDetailsService;
 
     @PostMapping("/login")
+    @ApiOperation(value = "Bu metot kullanıcı girişi için token üretir")
     public String creteToken(@RequestBody MaxUserDetails maxUserDetails) throws Exception {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(maxUserDetails.getUsername(), maxUserDetails.getPassword()));

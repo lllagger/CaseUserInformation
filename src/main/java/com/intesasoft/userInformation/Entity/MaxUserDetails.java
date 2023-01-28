@@ -3,7 +3,7 @@ package com.intesasoft.userInformation.Entity;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.intesasoft.userInformation.Service.Utils.CustomAuthorityDeserializer;
+import com.intesasoft.userInformation.Utils.CustomAuthorityDeserializer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
