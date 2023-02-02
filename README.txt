@@ -1,6 +1,6 @@
 # CaseUserInformation
 
-Uygulamayı başlattıktan sonra, http://localhost:8080/v2/api-docs adresine gidilerek JSON tabanlı Swagger kodu kopyalanır.
+Uygulamayı başlattıktan sonra, http://localhost:8080/v2/api-docs/ adresine gidilerek JSON tabanlı Swagger kodu kopyalanır.
 
 daha sonra CMD üzerinden Chrome için; 
         C:\Program Files\Google\Chrome\Application> dosya yoluna gidliler ve Chrome uygulaması web-security kapatılarak çalıştırılır.
