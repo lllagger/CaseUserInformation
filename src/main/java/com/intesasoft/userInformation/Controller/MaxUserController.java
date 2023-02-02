@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/api")
 @Slf4j
 @CrossOrigin
-public class MaxUserController {
+public class MaxUserController{
 
     @Autowired
     private MaxUserService maxUserService;

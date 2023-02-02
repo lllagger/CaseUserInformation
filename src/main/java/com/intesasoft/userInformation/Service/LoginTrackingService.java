@@ -3,12 +3,14 @@ package com.intesasoft.userInformation.Service;
 import com.intesasoft.userInformation.Entity.LoginTracking;
 import com.intesasoft.userInformation.Repository.ILoginTrackingRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class LoginTrackingService {
+public class LoginTrackingService{
 
+    @Autowired
     private ILoginTrackingRepository ILoginTrackingRepository;
 
     public LoginTrackingService(ILoginTrackingRepository ILoginTrackingRepository) {

@@ -15,6 +15,7 @@ import springfox.documentation.spring.web.plugins.DocumentationPluginsManager;
 import springfox.documentation.spring.web.scanners.ApiDescriptionReader;
 import springfox.documentation.spring.web.scanners.ApiListingScanner;
 import springfox.documentation.spring.web.scanners.ApiModelReader;
+import springfox.documentation.spring.web.scanners.ApiModelSpecificationReader;
 
 import java.time.LocalDateTime;
 
@@ -50,4 +51,5 @@ public class UserInformationApplication {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

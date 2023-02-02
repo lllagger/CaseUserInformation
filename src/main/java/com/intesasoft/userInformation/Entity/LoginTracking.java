@@ -34,4 +34,6 @@ public class LoginTracking {
         this.attemptDate = attemptDate;
         this.attemptType = attemptType;
     }
+
+
 }
