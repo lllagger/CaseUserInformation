@@ -13,3 +13,13 @@ CMD çalıştırıldıktan sonra açılan Google Chrome ile https://editor-next.
 http://localhost:8080/v2/api-docs adresinden kopyaladığımız JSON tabanlı kod https://editor-next.swagger.io/ adresinde ekranın sol tarafında bulunan Editör'e yapıştırılır.
 
 Login API si ile uygulamaya login olunur ve kalan API ler denenir.
+
+
+http://localhost:8080/h2-console/ urlsne gidilir
+
+username = sa
+userpassword =
+
+url = jdbc:h2:mem:userinformation
+
+verilerek içeriye girilebilir.
